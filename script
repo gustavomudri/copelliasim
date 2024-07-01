@@ -1,0 +1,75 @@
+function sysCall_init()
+      sim = require('sim')
+    D1=sim.getObject('/D1')
+    D2=sim.getObject('/D2')
+    D3=sim.getObject('/D3')
+    D4=sim.getObject('/D4')
+    D5=sim.getObject('/D5')
+    D6=sim.getObject('/D6')
+    E1=sim.getObject('/E1')
+    E2=sim.getObject('/E2')
+    E3=sim.getObject('/E3')
+    E4=sim.getObject('/E4')
+    E5=sim.getObject('/E5')
+    E6=sim.getObject('/E6')
+  
+end
+
+function sysCall_actuation()
+for i=1,10,1 do
+    if((sim.getSimulationTime())<3)then
+
+    sim.setJointTargetPosition(E4,-90*math.pi/180)
+ elseif((sim.getSimulationTime())<5)then
+
+    sim.setJointTargetPosition(E3,80*math.pi/180)
+
+    sim.setJointTargetPosition(E1,-40*math.pi/180)
+
+    sim.setJointTargetPosition(E2,-20*math.pi/180)
+     elseif((sim.getSimulationTime())<15)then
+         sim.setJointTargetPosition(E5,-50*math.pi/180)
+    sim.setJointTargetPosition(E2,-10*math.pi/180)
+    elseif((sim.getSimulationTime())<20)then
+    
+        sim.setJointTargetPosition(D1,30*math.pi/180)
+        sim.setJointTargetPosition(D4,90*math.pi/180)
+        elseif((sim.getSimulationTime())<23)then
+        sim.setJointTargetPosition(E1,-50*math.pi/180)
+        
+        sim.setJointTargetPosition(D3,-60*math.pi/180)
+            elseif((sim.getSimulationTime())<25)then
+        sim.setJointTargetPosition(D6,20*math.pi/180)
+            elseif((sim.getSimulationTime())<27)then
+        sim.setJointTargetPosition(D1,0*math.pi/180)
+        
+        sim.setJointTargetPosition(D2,0*math.pi/180)
+        
+        sim.setJointTargetPosition(D3,0*math.pi/180)
+        
+        sim.setJointTargetPosition(D4,0*math.pi/180)
+        
+        sim.setJointTargetPosition(D5,0*math.pi/180)
+    
+        sim.setJointTargetPosition(D6,0*math.pi/180)
+        
+                    elseif((sim.getSimulationTime())<29)then
+        sim.setJointTargetPosition(E1,-90*math.pi/180)
+            sim.setJointTargetPosition(E2,-00*math.pi/180)
+        sim.setJointTargetPosition(E4,-100*math.pi/180)
+    end
+    
+end
+end
+
+
+
+function sysCall_sensing()
+    -- put your sensing code here
+end
+
+function sysCall_cleanup()
+    -- do some clean-up here
+end
+
+-- See the user manual or the available code snippets for additional callback functions and details
